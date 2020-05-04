@@ -1,4 +1,8 @@
 package com.glob.movies.domain.dtos
 
-class MovieDto {
-}
+class MovieDto (
+    val id: String,
+    val title: String,
+    val overView: String,
+    val frontImage : String
+)
