@@ -18,7 +18,7 @@ class GetMovieByIdUseCase(
     override fun buildUSingleUseCase(params: Params?): Single<MovieDto> {
         return params?.let {
             moviesRepository.getMovieById(it.id)
-        } ?: Single.error(Throwable("invalid Arguments"))
+        } ?: Single.error(Throwable("Invalid Arguments"))
     }
 
 
