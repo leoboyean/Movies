@@ -44,5 +44,11 @@ dependencies {
 
 //    implementation 'androidx.navigation:navigation-fragment:2.2.1'
 //    implementation 'androidx.navigation:navigation-ui:2.2.1'
-
+    implementation project(':data')
+    implementation project(':domain')
+    implementation androidSupport.values()
+    implementation retrofit.values()
+    implementation okhttp.values()
+    testImplementation tests.values()
+    implementation rx.values()
 }
