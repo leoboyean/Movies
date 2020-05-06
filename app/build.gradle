@@ -49,6 +49,8 @@ dependencies {
     implementation androidSupport.values()
     implementation retrofit.values()
     implementation okhttp.values()
+    implementation appDependencies.values()
+    //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation tests.values()
     implementation rx.values()
 }
