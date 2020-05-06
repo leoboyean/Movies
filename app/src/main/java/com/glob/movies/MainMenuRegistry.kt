@@ -11,10 +11,7 @@ import com.glob.movies.domain.executors.ThreadExecutor
 import com.glob.movies.domain.providers.MoviesProvider
 import com.glob.movies.domain.repositories.MoviesRepository
 import com.glob.movies.presenters.MainMenuPresenter
-import com.google.gson.GsonBuilder
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import com.glob.movies.services.RetrofitFactory
 
 class MainMenuRegistry {
 
@@ -27,15 +24,7 @@ class MainMenuRegistry {
     }
 
     private fun getMovieService(): MovieServices {
-        val gson = GsonBuilder()
-            .setLenient()
-            .create()
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
-            .addConverterFactory(GsonConverterFactory.create(gson))
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .build()
-        return retrofit.create(MovieServices::class.java)
+        return RetrofitFactory.getInstance().create(MovieServices::class.java)
     }
 
     private val moviesRepository: MoviesRepository by lazy {
