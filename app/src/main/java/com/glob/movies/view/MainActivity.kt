@@ -1,30 +1,33 @@
 package com.glob.movies.view
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-//import androidx.navigation.findNavController
-//import androidx.navigation.ui.AppBarConfiguration
-//import androidx.navigation.ui.setupActionBarWithNavController
-//import androidx.navigation.ui.setupWithNavController
+import androidx.fragment.app.Fragment
 import com.glob.movies.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainMenuFragment.OnMovieActionListener {
+
+    private val INITIAL_PAGE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //val navView: BottomNavigationView = this.findViewById(R.id.nav_view)
-
-        //val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        //val appBarConfiguration = AppBarConfiguration(setOf(
-            //R.id.navigation_home,
-            //R.id.navigation_dashboard,
-            //R.id.navigation_notifications
-        //))
-        //setupActionBarWithNavController(navController, appBarConfiguration)
-        //navView.setupWithNavController(navController)
+        val mainMenuFragment = MainMenuFragment.newInstance(INITIAL_PAGE)
+        showFragment(mainMenuFragment)
     }
+
+    override fun onMovieSelected(id: String) {
+        val detailFragment = DetailFragment.newInstance(id)
+        showFragment(detailFragment)
+    }
+
+    override fun onSectionSelected(title: String) {
+        actionBar?.title = title
+    }
+
+    private fun showFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().add(R.id.mainContainer, fragment, fragment.tag)
+            .commit()
+    }
+
 }
