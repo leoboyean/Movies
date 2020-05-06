@@ -1,5 +1,6 @@
 package com.glob.movies.data.remote.services
 
+import com.glob.movies.data.remote.requests.ObjectMovies
 import com.glob.movies.data.remote.responses.GetMovieResponse
 import io.reactivex.Single
 import retrofit2.Response
@@ -13,6 +14,7 @@ interface MovieServices {
     fun getMovieDetails(@Path("id") id: Long): Single<Response<GetMovieResponse>>
 
     @GET("movie/popular")
-    fun getPopularMovies(@Query("page") page: Int): Single<Response<List<GetMovieResponse>>>
+    fun getPopularMovies(@Query("page") page: Int): Single<Response<ObjectMovies>>
+//    fun getPopularMovies(@Query("page") page: Int): Single<Response<List<GetMovieResponse>>>
 
 }
