@@ -58,9 +58,10 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/cvPoster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cvPoster"
@@ -71,10 +72,10 @@
         android:id="@+id/lblOverview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/details_overview"
         android:visibility="gone"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@id/cvPoster"
+        app:layout_constraintStart_toStartOf="@+id/tvOverview"
         app:layout_constraintTop_toBottomOf="@id/cvPoster"
         tools:visibility="visible" />
 
