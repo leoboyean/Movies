@@ -31,13 +31,6 @@ class MoviesDataRepository(private val moviesServices: MovieServices) : MoviesRe
                         movies.add(MovieDto(it.id, it.title, it.overview, it.posterPath))
                     }
                     Single.just(movies)
-//                    response.body()?.let {
-//                        val movies : ArrayList<MovieDto> = arrayListOf()
-//                        it.results.forEach {
-//                            movies.add(MovieDto(it.id, it.title, it.overview, it.posterPath))
-//                        }
-//                        Single.just(movies)
-//                    }
                 } else {
                     Single.error(Throwable(response.message().toString()))
                 }

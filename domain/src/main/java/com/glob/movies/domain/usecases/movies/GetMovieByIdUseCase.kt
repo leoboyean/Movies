@@ -21,5 +21,4 @@ class GetMovieByIdUseCase(
         } ?: Single.error(Throwable("Invalid Arguments"))
     }
 
-
 }
