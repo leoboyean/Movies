@@ -66,8 +66,6 @@ class MainMenuFragment : Fragment(), MainMenuContract.View, MovieAdapter.OnItemS
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        refreshPage()
-
         rvContainer.setHasFixedSize(true)
         rvContainer.layoutManager = GridLayoutManager(context, 3)
         rvContainer.adapter = movieAdapter
