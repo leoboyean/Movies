@@ -26,13 +26,18 @@ class MoviesDataRepository(private val moviesServices: MovieServices) : MoviesRe
         return moviesServices.getPopularMovies(page ?: DEFAULTPAGE)
             .flatMap {response ->
                 return@flatMap if (response.isSuccessful) {
-                    response.body()?.let {body ->
-                        val movies : ArrayList<MovieDto> = arrayListOf()
-                        body.forEach {
-                            movies.add(MovieDto(it.id, it.title, it.overview, it.posterPath))
-                        }
-                        Single.just(movies)
+                    val movies : ArrayList<MovieDto> = arrayListOf()
+                    response.body()?.results?.forEach {
+                        movies.add(MovieDto(it.id, it.title, it.overview, it.posterPath))
                     }
+                    Single.just(movies)
+//                    response.body()?.let {
+//                        val movies : ArrayList<MovieDto> = arrayListOf()
+//                        it.results.forEach {
+//                            movies.add(MovieDto(it.id, it.title, it.overview, it.posterPath))
+//                        }
+//                        Single.just(movies)
+//                    }
                 } else {
                     Single.error(Throwable(response.message().toString()))
                 }

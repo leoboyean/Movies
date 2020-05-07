@@ -33,7 +33,7 @@ class MovieAdapter(
             listener.onItemSelected(moview.id)
         }
         Glide.with(context)
-            .load(moview.frontImage)
+            .load("https://image.tmdb.org/t/p/w500/${moview.frontImage}")
             .into(holder.poster)
     }
 
@@ -42,6 +42,7 @@ class MovieAdapter(
             movieList.add(it)
         }
         notifyDataSetChanged()
+
     }
 
     interface OnItemSelectedListener {
@@ -49,14 +50,9 @@ class MovieAdapter(
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val poster: ImageView
-        val title: TextView
-        val item: ConstraintLayout
+        val poster: ImageView = itemView.findViewById(R.id.imgItem)
+        val title: TextView = itemView.findViewById(R.id.tvTitle)
+        val item: ConstraintLayout = itemView.findViewById(R.id.clItem)
 
-        init {
-            poster = itemView.findViewById(R.id.ivPoster)
-            title = itemView.findViewById(R.id.tvTitle)
-            item = itemView.findViewById(R.id.clItem)
-        }
     }
 }

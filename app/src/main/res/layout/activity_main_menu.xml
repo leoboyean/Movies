@@ -22,6 +22,7 @@
         android:id="@+id/nav_host_fragment"
         android:name="com.glob.movies.view.ListContainerFragment"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/navBottomView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,8 +31,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_movie"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_movie"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navBottomView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
