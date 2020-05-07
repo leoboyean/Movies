@@ -9,18 +9,6 @@
     tools:context=".view.DetailFragment"
     android:focusable="true">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivBackground"
         android:layout_width="match_parent"
@@ -45,13 +33,13 @@
         android:layout_height="170dp"
         android:adjustViewBounds="true"
         app:cardCornerRadius="10dp"
-        android:elevation="4dp"
+        android:elevation="20dp"
+        android:alpha="0.2"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline"
-        tools:background="@tools:sample/avatars">
+        app:layout_constraintTop_toTopOf="@id/guideline">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivPoster"
@@ -59,11 +47,6 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/guideline"
             tools:background="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>
@@ -74,6 +57,7 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:gravity="center"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="@id/cvPoster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cvPoster"

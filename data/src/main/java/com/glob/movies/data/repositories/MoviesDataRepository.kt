@@ -14,7 +14,7 @@ class MoviesDataRepository(private val moviesServices: MovieServices) : MoviesRe
             .flatMap { response ->
                 return@flatMap if (response.isSuccessful) {
                     response.body()?.let {
-                        Single.just(MovieDto(it.id, it.title, it.overview, it.posterPath))
+                        Single.just(MovieDto(it.id, it.title, it.overview, it.posterPath, it.backdropPath))
                     }
                 } else {
                     Single.error(Throwable(response.errorBody().toString()))

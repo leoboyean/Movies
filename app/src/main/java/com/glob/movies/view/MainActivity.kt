@@ -75,13 +75,14 @@ class MainActivity : AppCompatActivity(), MainMenuFragment.OnMovieActionListener
     }
 
     private fun defaultToolbar() {
-        supportActionBar?.setTitle("Movies")
+        supportActionBar?.title = "Movies"
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         supportActionBar?.setHomeButtonEnabled(false)
     }
 
     override fun onMovieShowed(title: String) {
-        actionBar?.setTitle(title)
+        Log.d("TAG", "Mi title on ToolBar is: $title")
+        supportActionBar?.title = title
     }
 
 }

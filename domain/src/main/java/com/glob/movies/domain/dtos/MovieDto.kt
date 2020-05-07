@@ -4,5 +4,6 @@ class MovieDto (
     val id: String,
     val title: String,
     val overView: String,
-    val frontImage : String
+    val frontImage : String,
+    val backImage : String? = null
 )

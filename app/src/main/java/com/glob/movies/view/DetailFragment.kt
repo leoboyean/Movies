@@ -88,10 +88,16 @@ class DetailFragment : Fragment(), DetailsContract.View {
 
     private fun showMovieDetial(movieDto: MovieDto) {
         lblOverview.visibility = View.VISIBLE
+        val posInitial = cvPoster.height/2F
+        cvPoster.y = posInitial
+        cvPoster.animate().setDuration(900).translationY(posInitial - cvPoster.height/2F).alpha(1F).start()
+
         tvTitle.text = movieDto.title
         tvOverview.text = movieDto.overView
         listener.onMovieShowed(movieDto.title)
-        getImage(movieDto.frontImage, ivBackground)
+        movieDto.backImage?.let {
+            getImage(it, ivBackground)
+        }
         getImage(movieDto.frontImage, ivPoster)
     }
 
