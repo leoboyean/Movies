@@ -29,35 +29,42 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvPoster"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline"
-        tools:background="@tools:sample/avatars"/>
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivPoster"
-        android:layout_width="140dp"
+        android:layout_width="130dp"
         android:layout_height="170dp"
+        android:adjustViewBounds="true"
+        app:cardCornerRadius="10dp"
+        android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline"
-        tools:background="@tools:sample/avatars" />
+        tools:background="@tools:sample/avatars">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline"
+            tools:background="@tools:sample/avatars" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/ivPoster"
+        app:layout_constraintBottom_toBottomOf="@id/cvPoster"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivPoster"
-        app:layout_constraintTop_toBottomOf="@+id/ivBackground"
+        app:layout_constraintStart_toEndOf="@id/cvPoster"
+        app:layout_constraintTop_toBottomOf="@id/ivBackground"
         tools:text="@string/app_name" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -67,8 +74,8 @@
         android:text="@string/details_overview"
         android:visibility="gone"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/ivPoster"
-        app:layout_constraintTop_toBottomOf="@+id/ivPoster"
+        app:layout_constraintStart_toStartOf="@id/cvPoster"
+        app:layout_constraintTop_toBottomOf="@id/cvPoster"
         tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatTextView
