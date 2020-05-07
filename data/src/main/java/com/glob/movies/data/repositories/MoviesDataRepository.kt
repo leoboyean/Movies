@@ -28,7 +28,7 @@ class MoviesDataRepository(private val moviesServices: MovieServices) : MoviesRe
                 return@flatMap if (response.isSuccessful) {
                     val movies : ArrayList<MovieDto> = arrayListOf()
                     response.body()?.results?.forEach {
-                        movies.add(MovieDto(it.id, it.title, it.overview, it.posterPath))
+                        movies.add(MovieDto(it.id, it.title, it.overview, "${it.posterPath}"))
                     }
                     Single.just(movies)
                 } else {
