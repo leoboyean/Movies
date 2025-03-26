@@ -31,14 +31,15 @@ Pattern desing
 - [x] Fragment Animation
 
 
-## Contribuciones
+## Contributions
 
-Las contribuciones son bienvenidas. Para ello:
-1. Realiza un fork del repositorio.
-2. Crea una nueva rama (feature/nueva-funcionalidad).
-3. Envía un Pull Request explicando los cambios realizados.
+Contributions are welcome. To do so:
+1. perform a fork of the repository.
+2. Create a new branch (feature/new-functionality).
+3. Send a Pull Request explaining the changes made.
 
-
+### Collaborators 
+- 0
 
 
 
